@@ -1,9 +1,10 @@
 export default function divideFunction(numerator, denominator) {
-    if (denominator === 0) throw new Error('cannot divide by 0');
+  try {
+    if (denominator === 0) {
+      throw new Error();
+    }
     return numerator / denominator;
+  } catch (error) {
+    throw Error('cannot divide by 0');
   }
-  import guardrail from './9-try';
-  import divideFunction from './8-try';
-
-  console.log(guardrail(() => { return divideFunction(10, 2) }));
-  console.log(guardrail(() => { return divideFunction(10, 0) }))
+}
