@@ -1,46 +1,41 @@
-export class HolbertonClass {
-    constructor(year, location) {
-      this._year = year;
-      this._location = location;
+export default class Car {
+    constructor(brand, motor, color) {
+      this.brand = brand;
+      this.motor = motor;
+      this.color = color;
     }
 
-    get year() {
-      return this._year;
+    get brand() {
+      return this._brand;
     }
 
-    get location() {
-      return this._location;
+    set brand(value) {
+      this._brand = value;
+    }
+
+    get motor() {
+      return this._motor;
+    }
+
+    set motor(value) {
+      this._motor = value;
+    }
+
+    get color() {
+      return this._color;
+    }
+
+    set color(value) {
+      this._color = value;
+    }
+
+    static get [Symbol.species]() {
+      return this;
+    }
+
+    cloneCar() {
+      const Species = this.constructor[Symbol.species];
+
+      return new Species();
     }
   }
-
-  export class StudentHolberton {
-    constructor(firstName, lastName, holbertonClass) {
-      this._firstName = firstName;
-      this._lastName = lastName;
-      this._holbertonClass = holbertonClass;
-    }
-
-    get fullName() {
-      return `${this._firstName} ${this._lastName}`;
-    }
-
-    get holbertonClass() {
-      return this._holbertonClass;
-    }
-
-    get fullStudentDescription() {
-      return `${this._firstName} ${this._lastName} - ${this._holbertonClass.year} - ${this._holbertonClass.location}`;
-    }
-  }
-
-  const class2020 = new HolbertonClass(2020, 'San Francisco');
-  const student1 = new StudentHolberton('Guillaume', 'Salva', class2020);
-  const student2 = new StudentHolberton('John', 'Doe', class2020);
-  const student3 = new StudentHolberton('Albert', 'Clinton', new HolbertonClass(2019, 'San Francisco'));
-  const student4 = new StudentHolberton('Donald', 'Bush', new HolbertonClass(2019, 'San Francisco'));
-  const student5 = new StudentHolberton('Jason', 'Sandler', new HolbertonClass(2019, 'San Francisco'));
-
-  const listOfStudents = [student1, student2, student3, student4, student5];
-  console.log(listOfStudents);
-  console.log(listOfStudents.map(student => student.fullStudentDescription));
-  export {listOfStudents};
