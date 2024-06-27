@@ -1,59 +1,28 @@
-import Currency from './3-currency';
-
-class Pricing {
-  constructor(amount, currency) {
-    this.amount = amount;
-    this.currency = currency;
+class Building {
+  constructor(sqft) {
+    if (this.constructor !== Building) {
+      if (typeof this.evacuationWarningMessage !== 'function') {
+        throw new Error(
+          'Class extending Building must override evacuationWarningMessage',
+        );
+      }
+    }
+    this.sqft = sqft;
   }
 
   /**
-   * @param {Number} amount
+   * @param {Number} sqft
    */
-  set amount(amount) {
-    if (typeof amount !== 'number') {
-      throw new TypeError('Amount must be a Number');
+  set sqft(sqft) {
+    if (typeof sqft !== 'number') {
+      throw new TypeError('sqft nust be a number');
     }
-    this._amount = amount;
+    this._sqft = sqft;
   }
 
-  get amount() {
-    return this._amount;
-  }
-
-  /**
-   * @param {Currency} currency
-   */
-  set currency(currency) {
-    if (currency instanceof Currency) {
-      this._currency = currency;
-    } else {
-      throw new TypeError('currency must be an instance of Currency');
-    }
-  }
-
-  get currency() {
-    return this._currency;
-  }
-
-  displayFullPrice() {
-    return `${this.amount} ${this.currency.displayFullCurrency()}`;
-  }
-
-  /**
-   * @param {Number} amount
-   * @param {Number} conversionRate
-   */
-  static convertPrice(amount, conversionRate) {
-    if (typeof amount !== 'number') {
-      throw new TypeError('amount must be a number');
-    }
-
-    if (typeof conversionRate !== 'number') {
-      throw new TypeError('conversionRate must be a number');
-    }
-
-    return amount * conversionRate;
+  get sqft() {
+    return this._sqft;
   }
 }
 
-export default Pricing;
+export default Building;
