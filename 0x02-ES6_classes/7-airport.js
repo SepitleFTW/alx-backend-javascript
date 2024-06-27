@@ -5,22 +5,22 @@ export default class Airport {
   }
 
   get name() {
-    return this.name;
+    return this._name;
   }
 
   set name(value) {
-    this.name = value;
+    this._name = value;
   }
 
   get code() {
-    return this.code;
+    return this._code;
   }
 
   set code(value) {
-    this.code = value;
+    this._code = value;
   }
 
   get [Symbol.toStringTag]() {
-    return this.code;
+    return this._code;
   }
 }

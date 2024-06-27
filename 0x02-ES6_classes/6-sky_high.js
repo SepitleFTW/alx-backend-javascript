@@ -7,11 +7,11 @@ export default class SkyHighBuilding extends Building {
   }
 
   get floors() {
-    return this.floors;
+    return this._floors;
   }
 
   set floors(value) {
-    this.floors = value;
+    this._floors = value;
   }
 
   evacuationWarningMessage() {

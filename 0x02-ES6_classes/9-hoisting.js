@@ -1,36 +1,36 @@
 export class HolbertonClass {
   constructor(year, location) {
-    this.year = year;
-    this.location = location;
+    this._year = year;
+    this._location = location;
   }
 
   get year() {
-    return this.year;
+    return this._year;
   }
 
   get location() {
-    return this.location;
+    return this._location;
   }
 }
 
 export class StudentHolberton {
   constructor(firstName, lastName, holbertonClass) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.holbertonClass = holbertonClass;
+    this._firstName = firstName;
+    this._lastName = lastName;
+    this._holbertonClass = holbertonClass;
   }
 
   get fullName() {
-    return `${this.firstName} ${this.lastName}`;
+    return `${this._firstName} ${this._lastName}`;
   }
 
   get holbertonClass() {
-    return this.holbertonClass;
+    return this._holbertonClass;
   }
 
   get fullStudentDescription() {
-    return `${this.firstName} ${this.lastName} - \
-  ${this.holbertonClass.year} - ${this.holbertonClass.location}`;
+    return `${this._firstName} ${this._lastName} - \
+${this._holbertonClass.year} - ${this._holbertonClass.location}`;
   }
 }
 
