@@ -5,31 +5,31 @@ class Currency {
   }
 
   /**
-     * @param {String} code
-     */
+   * @param {String} code
+   */
   set code(code) {
     if (typeof code !== 'string') {
       throw new TypeError('Code must be a String');
     }
-    this.code = code;
+    this._code = code;
   }
 
   get code() {
-    return this.code;
+    return this._code;
   }
 
   /**
-     * @param {String} name
-     */
+   * @param {String} name
+   */
   set name(name) {
     if (typeof name !== 'string') {
       throw new TypeError('Name must be a String');
     }
-    this.name = name;
+    this._name = name;
   }
 
   get name() {
-    return this.name;
+    return this._name;
   }
 
   displayFullCurrency() {
