@@ -6,43 +6,46 @@ class HolbertonCourse {
   }
 
   /**
-     * @param {String} name
-     */
+   * @param {String} name
+   */
   set name(name) {
     if (typeof name !== 'string') {
       throw new TypeError('Name must be a string');
     }
-    this.name = name;
+    this._name = name;
   }
 
   get name() {
-    return this.name;
+    return this._name;
   }
 
+  /**
+   * @param {Number} length
+   */
   set length(length) {
     if (typeof length !== 'number') {
       throw new TypeError('Length must be a number');
     }
-    this.length = length;
+    this._length = length;
   }
 
   get length() {
-    return this.length;
+    return this._length;
   }
 
   /**
-     * @param {Array} students
-     */
+   * @param {Array} students
+   */
   set students(students) {
     if (students instanceof Array) {
-      this.students = students;
+      this._students = students;
     } else {
       throw new TypeError('Students must be an Array');
     }
   }
 
   get students() {
-    return this.students;
+    return this._students;
   }
 }
 
