@@ -19,9 +19,7 @@ class HolbertonCourse {
       return this._name;
     }
 
-    /**
-     * @param {Number} length
-     */
+
     set length(length) {
       if (typeof length !== 'number') {
         throw new TypeError('Length must be a number');
