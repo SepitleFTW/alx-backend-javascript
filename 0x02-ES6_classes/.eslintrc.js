@@ -13,13 +13,11 @@ module.exports = {
       SharedArrayBuffer: 'readonly',
     },
     parserOptions: {
-      ecmaVersion: 2018,
+      ecmaVersion: 2021,
       sourceType: 'module',
     },
     plugins: ['jest'],
     rules: {
-      'max-classes-per-file': 'off',
-      'no-underscore-dangle': 'off',
       'no-console': 'off',
       'no-shadow': 'off',
       'no-restricted-syntax': [
