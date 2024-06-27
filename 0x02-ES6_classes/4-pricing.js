@@ -13,11 +13,11 @@ class Pricing {
     if (typeof amount !== 'number') {
       throw new TypeError('Amount must be a Number');
     }
-    this._amount = amount;
+    this.amount = amount;
   }
 
   get amount() {
-    return this._amount;
+    return this.amount;
   }
 
   /**
@@ -25,14 +25,14 @@ class Pricing {
    */
   set currency(currency) {
     if (currency instanceof Currency) {
-      this._currency = currency;
+      this.currency = currency;
     } else {
       throw new TypeError('currency must be an instance of Currency');
     }
   }
 
   get currency() {
-    return this._currency;
+    return this.currency;
   }
 
   displayFullPrice() {

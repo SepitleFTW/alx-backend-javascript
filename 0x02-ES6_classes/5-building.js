@@ -17,11 +17,11 @@ class Building {
     if (typeof sqft !== 'number') {
       throw new TypeError('sqft nust be a number');
     }
-    this._sqft = sqft;
+    this.sqft = sqft;
   }
 
   get sqft() {
-    return this._sqft;
+    return this.sqft;
   }
 }
 

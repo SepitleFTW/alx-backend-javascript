@@ -5,19 +5,19 @@ export default class HolbertonClass {
   }
 
   get size() {
-    return this._size;
+    return this.size;
   }
 
   set size(value) {
-    this._size = value;
+    this.size = value;
   }
 
   get location() {
-    return this._location;
+    return this.location;
   }
 
   set location(value) {
-    this._location = value;
+    this.location = value;
   }
 
   [Symbol.toPrimitive](hint) {

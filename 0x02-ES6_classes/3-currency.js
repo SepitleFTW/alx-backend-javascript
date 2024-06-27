@@ -11,11 +11,11 @@ class Currency {
     if (typeof code !== 'string') {
       throw new TypeError('Code must be a String');
     }
-    this._code = code;
+    this.code = code;
   }
 
   get code() {
-    return this._code;
+    return this.code;
   }
 
   /**
@@ -25,11 +25,11 @@ class Currency {
     if (typeof name !== 'string') {
       throw new TypeError('Name must be a String');
     }
-    this._name = name;
+    this.name = name;
   }
 
   get name() {
-    return this._name;
+    return this.name;
   }
 
   displayFullCurrency() {

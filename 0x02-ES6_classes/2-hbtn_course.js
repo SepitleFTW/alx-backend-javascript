@@ -12,22 +12,22 @@ class HolbertonCourse {
     if (typeof name !== 'string') {
       throw new TypeError('Name must be a string');
     }
-    this._name = name;
+    this.name = name;
   }
 
   get name() {
-    return this._name;
+    return this.name;
   }
 
   set length(length) {
     if (typeof length !== 'number') {
       throw new TypeError('Length must be a number');
     }
-    this._length = length;
+    this.length = length;
   }
 
   get length() {
-    return this._length;
+    return this.length;
   }
 
   /**
@@ -35,14 +35,14 @@ class HolbertonCourse {
      */
   set students(students) {
     if (students instanceof Array) {
-      this._students = students;
+      this.students = students;
     } else {
       throw new TypeError('Students must be an Array');
     }
   }
 
   get students() {
-    return this._students;
+    return this.students;
   }
 }
 
