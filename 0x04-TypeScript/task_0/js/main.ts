@@ -25,25 +25,24 @@ const studentsList: Array<Student> = [
 ];
 
 
-export const renderTable = (studentsList: Array<Student>): void => {
-    //table tag created
+export const renderTable = (studentsList: Array<Student>): void =>  {
+    // create table tag
     const table = document.createElement('table');
     const headRow = document.createElement('tr');
     table.insertAdjacentElement('beforeend', headRow);
 
-    //insert the headers
+    // insert headers
     headRow.insertAdjacentHTML('beforeend', '<th>FirstName</th>');
     headRow.insertAdjacentHTML('beforeend', '<th>Location</th>');
 
     for (const student of studentsList) {
-        const studentRow = document.createElement('tr')
-        studentRow.insertAdjacentHTML('beforeend', `<td>${student.firstName}</td>`);
-        studentRow.insertAdjacentHTML('beforeend', `<td>${student.location}</td>`);
-        table.insertAdjacentElement('beforeend', studentRow);
-      }
+      const studentRow = document.createElement('tr')
+      studentRow.insertAdjacentHTML('beforeend', `<td>${student.firstName}</td>`);
+      studentRow.insertAdjacentHTML('beforeend', `<td>${student.location}</td>`);
+      table.insertAdjacentElement('beforeend', studentRow);
+    }
 
-      document.body.insertAdjacentElement('beforeend', table);
+    document.body.insertAdjacentElement('beforeend', table);
+  }
 
-}
-
-renderTable(studentsList);
+  renderTable(studentsList);
